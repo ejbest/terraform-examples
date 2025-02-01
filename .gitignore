@@ -42,7 +42,7 @@ old/
 .env
 base/*.pem
 .terraform/
-*.sh
+
 userandroles.tf
 userandroles.txt
 
