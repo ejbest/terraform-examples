@@ -1,0 +1,31 @@
+module "webserver" {
+  source = "./base"
+
+  availability_zone         = local.ejb_availability_zone
+  ebs_volume_size           = local.ejb_ebs_volume_size
+  ec2_tags                  = local.ejb_webserver_name
+  cidr_block                = local.ejb_sub1_cidr_block
+  ssm_role_name             = local.ssm_role_name
+  ssm_policy_arn            = local.ssm_policy_arn
+  ssm_instance_profile_name = local.ssm_instance_profile_name
+  vpc_tags                  = local.vpc_tags
+  domain_name               = var.domain_name
+  ec2_ssh_key_pair_name     = local.ejb_key_name
+  private_ssh_keyname       = local.ejb_private_keyname
+  instance_type             = local.ejb_instance_type
+  ami_id                    = local.ejb_ami_id
+  ebs_volume_device_name    = local.ejb_ebs_volume_device_name
+  ebs_tags                  = local.ejb_ebs_tags
+  subnet_tags               = local.ejb_subnet_name
+  sg_tags_name              = local.ejb_sg_tags_name
+  sg_ingress_rules          = local.security_group_ingress_rules
+  sg_description            = local.sg_description
+  sg_name                   = local.ejb_sg_name
+  web_server_private_ip     = local.web_server_private_ip
+  aws_eip_domain            = local.aws_eip_domain
+  rt_ipv6_cidr_block        = local.ejb_ipv6_cidr_block
+  rt_ipv4_cidr_block        = local.route_cidr_block
+  rt_name                   = local.ejb_rt_name
+  user_details              = local.user_details
+  user_policy_pairs         = local.user_policy_pairs
+}
